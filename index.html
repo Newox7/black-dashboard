@@ -195,6 +195,31 @@
     </footer>
   </div>
 </div>
+<!--   Script list   -->
+<script>
+  getData();
+
+  async function getData() {
+    const response = await fetch('test.csv');
+    const data = await response.test();
+    console.log(data);
+
+    const rows = data.split('\n');
+    rows.forEach(elt => {
+      const row = elt.split(',');
+      const company = row[0];
+      const land = row[1];
+      const xdag = row[2];
+      const utddag = row[3];
+      const utd = row[4];
+      const kurs = row[5];
+      const procent = row[6];
+      const owner = row[7];
+      console.log(company, land, xdag, utddag,utd,kurs,procent,owner)
+    });
+    console.log(rows);
+  }
+</script>
 <!--   Core JS Files   -->
 <script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
 <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
