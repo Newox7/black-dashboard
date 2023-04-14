@@ -155,13 +155,11 @@
 </div>
 <!--   Script list   -->
 <script>
-window.onload = function() {
-  getData();
-}
+getData();
 
 async function getData() {
-  const response = fetch('out.csv');
-  const data = response.text();
+  const response = await fetch('out.csv');
+  const data = await response.text();
 
   const rows = data.split('\n').slice(1);
 
