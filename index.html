@@ -109,7 +109,7 @@
 
   async function getData() {
     const response = await fetch('out.csv');
-    const data = await response.test();
+    const data = await response.text();
     console.log(data);
 
     const rows = data.split('\n').slice(1);
