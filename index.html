@@ -94,7 +94,7 @@
           <tbody>
               <tr>
                   <td class="text-center">1</td>
-                  <td><p id="companyname"></p></td>
+                  <td><p id="output"></p></td>
                   <td>Develop</td>
                   <td>2013</td>
                   <td class="text-right">&euro; 99,225</td>
@@ -176,29 +176,11 @@
 </div>
 <!--   Script list   -->
 <script>
-  getData();
+window.onload = function() {
+  var lengthOfName = "SSAB"
 
-  async function getData() {
-    const response = await fetch('out.csv');
-    const data = await response.text();
-    console.log(data);
-
-    const rows = data.split('\n').slice(1);
-    rows.forEach(elt => {
-      const row = elt.split(',');
-      const company = row[0];
-      const land = row[1];
-      const xdag = row[2];
-      const utddag = row[3];
-      const utd = row[4];
-      const kurs = row[5];
-      const procent = row[6];
-      const owner = row[7];
-      console.log(company, land, xdag, utddag,utd,kurs,procent,owner)
-      document.getElementById('companyname').innerHTML = company;
-    });
-    console.log(rows);
-  }
+  document.getElementById('output').innerHTML = lengthOfName;
+};
 </script>
 
 <!--   Core JS Files   -->
