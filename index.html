@@ -162,6 +162,7 @@ async function getData() {
   const data = await response.text();
 
   const rows = data.split('\n').slice(1);
+  const columns = rows.split(',');
 
   console.log(data);
   console.log(data[0]);
@@ -169,6 +170,12 @@ async function getData() {
   console.log(rows);
   console.log(rows[0]);
   console.log(rows[0][0]);
+  console.log(columns);
+  console.log(columns[0]);
+  console.log(columns[1]);
+  console.log(columns[2]);
+  console.log(columns[0][0]);
+
 
 
   document.getElementById('name1').innerHTML = rows[0][0];
