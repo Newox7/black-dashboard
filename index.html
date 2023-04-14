@@ -94,7 +94,7 @@
           <tbody>
               <tr>
                   <td class="text-center">1</td>
-                  <td><var>company</var>></td>
+                  <td><p id="companyname"></p></td>
                   <td>Develop</td>
                   <td>2013</td>
                   <td class="text-right">&euro; 99,225</td>
@@ -195,6 +195,7 @@
       const procent = row[6];
       const owner = row[7];
       console.log(company, land, xdag, utddag,utd,kurs,procent,owner)
+      document.getElementById('companyname').innerHTML = company;
     });
     console.log(rows);
   }
