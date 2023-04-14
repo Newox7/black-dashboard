@@ -125,7 +125,7 @@
         <img class="card-img-top" src="..." alt="Card image cap">
         <div class="card-body">
           <h4 class="card-title">Short</h4>
-          <p class="card-text">Rekomender köp av "Bear Cert x<p id="certx"></p>" kl 16:00 den</p>
+          <p class="card-text">Rekomender köp av "Bear Cert x<p id="certx"></p>" kl 16:00 den <p id="shortday"></p></p>
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
@@ -180,8 +180,8 @@ async function getData() {
   let x = Math.floor(arr[6] / 2);
   let day = arr[2].split('-');
   let intday = parseInt(day[2]) - 1;
-  let str1 = day[0].concat('', day[1]);
-  let str2 = str1.concat('', intday.toString());
+  let str1 = day[0].concat('-', day[1]);
+  let str2 = str1.concat('-', intday.toString());
 
   console.log(x);
   console.log(day);
