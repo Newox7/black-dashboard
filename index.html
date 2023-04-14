@@ -156,8 +156,12 @@
 <!--   Script list   -->
 <script>
 window.onload = function() {
+  getData();
+}
+
+async function getData() {
   const response = fetch('out.csv');
-  const data = response;
+  const data = response.text();
 
   const rows = data.split('\n').slice(1);
 
