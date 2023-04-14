@@ -124,8 +124,8 @@
       <div class="card" style="width: 20rem;">
         <img class="card-img-top" src="..." alt="Card image cap">
         <div class="card-body">
-          <h4 class="card-title">Card title</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h4 class="card-title">Short</h4>
+          <p class="card-text">Rekomender köp av "Bear Cert x<p id="certx"></p>" kl 16:00 den</p>
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
@@ -177,7 +177,20 @@ async function getData() {
     });
   });
 
+  let x = Math.floor(arr[6] / 2);
+  let day = arr[2].split('-');
+  let intday = parseInt(day[2]) - 1;
+  let str1 = day[0].concat('', day[1]);
+  let str2 = str1.concat('', intday.toString());
 
+  console.log(x);
+  console.log(day);
+  console.log(intday);
+  console.log(str1);
+  console.log(str2);
+
+  document.getElementById('shortday').innerHTML = str2;
+  document.getElementById('certx').innerHTML = x;
   document.getElementById('name1').innerHTML = arr[0];
   document.getElementById('land1').innerHTML = arr[1];
   document.getElementById('xdag1').innerHTML = arr[2];
