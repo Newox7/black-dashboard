@@ -209,6 +209,10 @@ async function getData() {
 </script>
 
 <script>
+'use strict';
+const popsicle = require('popsicle');
+const defaultCurrencies = 'BTC,USD,EUR,AUD,CHF,CAD,GBP';
+
 const getEthPriceHistorical= (n,toSymbol) => {
 	var days = n || 7;
     if (typeof toSymbol === 'string') {
