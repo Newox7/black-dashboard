@@ -209,11 +209,6 @@ async function getData() {
 </script>
 
 <script>
-getEthPriceHistorical()
-.then( data => {
-  console.log(data);
-});
-
 const getEthPriceHistorical= (n,toSymbol) => {
 	var days = n || 7;
     if (typeof toSymbol === 'string') {
@@ -247,6 +242,12 @@ const getEthPriceHistorical= (n,toSymbol) => {
         return result;
     }, {}));
 }
+
+getEthPriceHistorical()
+.then( data => {
+  console.log(data);
+});
+
 </script>
 
 
