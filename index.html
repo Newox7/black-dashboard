@@ -158,11 +158,6 @@
 </div>
 <!--   Script list   -->
 <script>
-getEthPriceHistorical()
-.then( data => {
-  console.log(data);
-});
-
 getData();
 
 async function getData() {
@@ -213,6 +208,12 @@ async function getData() {
 };
 </script>
 
+<script>
+getEthPriceHistorical()
+.then( data => {
+  console.log(data);
+});
+</script>
 
 
 <!--   Core JS Files   -->
