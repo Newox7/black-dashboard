@@ -122,17 +122,27 @@
               </tr>
           </tbody>
       </table>
-      <div class="card" style="width: 20rem;">
-        <img style = "width: 325px; height: 158px;" class="card-img-top" src="/assets/img/bearpic.png" alt="Card image cap">
-        <div class="card-body">
-          <h4 class="card-title">Short</h4>
-          <p class="card-text" id="cardtext1"></p>
-          <a href="https://www.avanza.se/borshandlade-produkter/certifikat-torg/lista.html" class="btn btn-primary">Gå till certifikat</a>
+      <div class="float-container">
+        <div class="card" style="width: 20rem;">
+          <img style = "width: 325px; height: 158px;" class="card-img-top" src="/assets/img/bearpic.png" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">Short</h4>
+            <p class="card-text" id="cardtext1"></p>
+            <a href="https://www.avanza.se/borshandlade-produkter/certifikat-torg/lista.html" class="btn btn-primary">Gå till certifikat</a>
+          </div>
+        </div>
+        <div class="card" style="width: 20rem;">
+          <img style = "width: 325px; height: 158px;" class="card-img-top" src="/assets/img/bearpic.png" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">Short</h4>
+            <p class="card-text" id="cardtext1"></p>
+            <a href="https://www.avanza.se/borshandlade-produkter/certifikat-torg/lista.html" class="btn btn-primary">Gå till certifikat</a>
+          </div>
         </div>
       </div>
       <div class="chart-container" style="position: relative; height: 300px; width: 900px;">
         <canvas id="lineChartExample"></canvas>
-    </div>
+      </div>
       </div>
     </div>
     <footer class="footer">
@@ -208,53 +218,6 @@ async function getData() {
 };
 </script>
 
-<script>
-'use strict';
-const popsicle = require('popsicle');
-const defaultCurrencies = 'BTC,USD,EUR,AUD,CHF,CAD,GBP';
-
-const getEthPriceHistorical= (n,toSymbol) => {
-	var days = n || 7;
-    if (typeof toSymbol === 'string') {
-       toSymbol = toSymbol.toUpperCase();
-    } else {
-        toSymbol = defaultCurrencies;
-    }
-    
-	return Promise.all(Array.from({length:days}).map((unused, i) => {
-        
-		let ts =  new Date(new Date().getTime() - (24*(i+1) * 60 * 60 * 1000));
-        
-		return popsicle.request({
-           method: 'POST',
-           url: 'https://min-api.cryptocompare.com/data/pricehistorical',
-
-           query: {
-            fsym: 'ETH',
-            tsyms: toSymbol,
-            timestamp: ts
-           }
-       })
-         .use(popsicle.plugins.parse(['json']))
-         .then(resp => resp.body)
-         .then(data => {
-            // const symbols = Object.keys(data);
-            return {ts, data};
-        });
-    })).then(results => results.reduce((result, {ts, data}) => {
-        result[ts] = data;
-        return result;
-    }, {}));
-}
-
-getEthPriceHistorical()
-.then( data => {
-  console.log(data);
-});
-
-</script>
-
-
 <!--   Core JS Files   -->
 <script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
 <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
@@ -265,7 +228,6 @@ getEthPriceHistorical()
 <!-- Chartist JS -->
 <script src="../assets/js/plugins/chartjs.min.js"></script>
 <script src="assets/js/chart.js"></script>
-<script src="assets/js/ethereumprice.js"></script>
 <!--  Notifications Plugin    -->
 <script src="../assets/js/plugins/bootstrap-notify.js"></script>
 <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->

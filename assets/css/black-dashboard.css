@@ -5162,6 +5162,10 @@ input[type="button"].btn-block {
 .navbar-dark .navbar-text a:focus {
   color: rgba(255, 255, 255, 0.65);
 }
+.float-container {
+  border: 3px solid #fff;
+  padding: 20px;
+}
 
 .card {
   position: relative;
