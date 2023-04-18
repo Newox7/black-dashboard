@@ -5195,6 +5195,19 @@ input[type="button"].btn-block {
   flex-direction: column;
 }
 
+.card-3 {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #140035;
+  background-clip: border-box;
+  border: 0.0625rem solid rgba(34, 42, 66, 0.05);
+  border-radius: 0.2857rem;
+  margin-right: 20px;
+  flex-direction: column;
+}
+
 .card>hr {
   margin-right: 0;
   margin-left: 0;
