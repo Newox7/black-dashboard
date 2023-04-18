@@ -5175,7 +5175,7 @@ input[type="button"].btn-block {
   display: flex;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #ffffff;
+  background-color: #000;
   background-clip: border-box;
   border: 0.0625rem solid rgba(34, 42, 66, 0.05);
   border-radius: 0.2857rem;
@@ -5187,7 +5187,7 @@ input[type="button"].btn-block {
   display: flex;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #ffffff;
+  background-color: #000;
   background-clip: border-box;
   border: 0.0625rem solid rgba(34, 42, 66, 0.05);
   border-radius: 0.2857rem;
