@@ -5167,7 +5167,6 @@ input[type="button"].btn-block {
   display: flex;
   flex-direction: row;
   padding: 20px;
-  justify-content: space-between;
 }
 
 .card-1 {
@@ -5175,10 +5174,11 @@ input[type="button"].btn-block {
   display: flex;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #000;
+  background-color: #140035;
   background-clip: border-box;
   border: 0.0625rem solid rgba(34, 42, 66, 0.05);
   border-radius: 0.2857rem;
+  margin-right: 20px;
   flex-direction: column;
 }
 
@@ -5187,7 +5187,7 @@ input[type="button"].btn-block {
   display: flex;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #000;
+  background-color: #140035;
   background-clip: border-box;
   border: 0.0625rem solid rgba(34, 42, 66, 0.05);
   border-radius: 0.2857rem;
