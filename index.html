@@ -199,20 +199,20 @@ async function getData() {
   let cardtext1 = 'Rekomenderar köp av "Bear Cert x' + x + ' ' + arr[0] + ' kl 16:00 den ' + str2 + '.';
   let x2 = Math.floor(arr[14] / 2);
   let day2 = arr[10].split('-');
-  let intday2 = parseInt(day2[10]) - 1;
-  let str12 = day2[8].concat('-', day2[1]);
+  let intday2 = parseInt(day2[2]) - 1;
+  let str12 = day2[0].concat('-', day2[1]);
   let str22 = str12.concat('-', intday2.toString());
   let cardtext2 = 'Rekomenderar köp av "Bear Cert x' + x2 + ' ' + arr[8] + ' kl 16:00 den ' + str22 + '.';
   let x3 = Math.floor(arr[22] / 2);
   let day3 = arr[2].split('-');
-  let intday3 = parseInt(day3[18]) - 1;
+  let intday3 = parseInt(day3[2]) - 1;
   let str13 = day3[0].concat('-', day3[1]);
   let str23 = str13.concat('-', intday3.toString());
   let cardtext3 = 'Rekomenderar köp av "Bear Cert x' + x3 + ' ' + arr[16] + ' kl 16:00 den ' + str23 + '.';
 
   document.getElementById('cardtext1').innerHTML = cardtext1;
-  document.getElementById('cardtext2').innerHTML = str3;
-  document.getElementById('cardtext3').innerHTML = str3;
+  document.getElementById('cardtext2').innerHTML = cardtext2;
+  document.getElementById('cardtext3').innerHTML = cardtext3;
   document.getElementById('name1').innerHTML = arr[0];
   document.getElementById('land1').innerHTML = arr[1];
   document.getElementById('xdag1').innerHTML = arr[2];
