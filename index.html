@@ -142,9 +142,8 @@
         <div class="card-3" style="width: 20rem;">
           <img style = "width: 325px; height: 158px;" class="card-img-top" src="/assets/img/bearpic.png" alt="Card image cap">
           <div class="card-body">
-            <h4 class="card-title">Short</h4>
-            <p class="card-text" id="cardtext3"></p>
-            <a href="https://www.avanza.se/borshandlade-produkter/certifikat-torg/lista.html" class="btn btn-primary">Gå till certifikat</a>
+            <h4 class="card-title" id="wallettitle"></h4>
+            <p class="card-text" id="wallettext"></p>
           </div>
         </div>
       </div>
@@ -203,16 +202,17 @@ async function getData() {
   let str12 = day2[0].concat('-', day2[1]);
   let str22 = str12.concat('-', intday2.toString());
   let cardtext2 = 'Rekomenderar köp av "Bear Cert x' + x2 + ' ' + arr[8] + ' kl 16:00 den ' + str22 + '.';
-  let x3 = Math.floor(arr[22] / 2);
-  let day3 = arr[2].split('-');
-  let intday3 = parseInt(day3[2]) - 1;
-  let str13 = day3[0].concat('-', day3[1]);
-  let str23 = str13.concat('-', intday3.toString());
-  let cardtext3 = 'Rekomenderar köp av "Bear Cert x' + x3 + ' ' + arr[16] + ' kl 16:00 den ' + str23 + '.';
+
+  const response2 = await fetch('wallet.txt');
+  const walletData = await response2.text();
+  walletData = parseInt(walletData);
+  let walllettitle = 'Wallet: ' + walletData;
+  let wallettext = 'Start värdet av wallet: 10000' ;
 
   document.getElementById('cardtext1').innerHTML = cardtext1;
   document.getElementById('cardtext2').innerHTML = cardtext2;
-  document.getElementById('cardtext3').innerHTML = cardtext3;
+  document.getElementById('wallettext').innerHTML = wallettext;
+  document.getElementById('wallettitle').innerHTML = walllettitle;
   document.getElementById('name1').innerHTML = arr[0];
   document.getElementById('land1').innerHTML = arr[1];
   document.getElementById('xdag1').innerHTML = arr[2];
