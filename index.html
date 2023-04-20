@@ -196,12 +196,14 @@ async function getData() {
   let str1 = day[0].concat('-', day[1]);
   let str2 = str1.concat('-', intday.toString());
   let cardtext1 = 'Rekomenderar köp av "Bear Cert x' + x + ' ' + arr[0] + ' kl 16:00 den ' + str2 + '.';
-  let x2 = Math.floor(arr[14] / 2);
-  let day2 = arr[10].split('-');
-  let intday2 = parseInt(day2[2]) - 1;
-  let str12 = day2[0].concat('-', day2[1]);
-  let str22 = str12.concat('-', intday2.toString());
-  let cardtext2 = 'Rekomenderar köp av "Bear Cert x' + x2 + ' ' + arr[8] + ' kl 16:00 den ' + str22 + '.';
+  if(typeof arr[10] !== "undefined"){
+    let x2 = Math.floor(arr[14] / 2);
+    let day2 = arr[10].split('-');
+    let intday2 = parseInt(day2[2]) - 1;
+    let str12 = day2[0].concat('-', day2[1]);
+    let str22 = str12.concat('-', intday2.toString());
+    let cardtext2 = 'Rekomenderar köp av "Bear Cert x' + x2 + ' ' + arr[8] + ' kl 16:00 den ' + str22 + '.';
+  }
 
   const response2 = await fetch('wallet.txt');
   const walletData = await response2.text();
