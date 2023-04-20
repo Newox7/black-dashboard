@@ -205,8 +205,8 @@ async function getData() {
 
   const response2 = await fetch('wallet.txt');
   const walletData = await response2.text();
-  walletData = parseInt(walletData);
-  let walllettitle = 'Wallet: ' + walletData;
+  walletData2 = parseInt(walletData);
+  let walllettitle = 'Wallet: ' + walletData2;
   let wallettext = 'Start värdet av wallet: 10000' ;
 
   document.getElementById('cardtext1').innerHTML = cardtext1;
