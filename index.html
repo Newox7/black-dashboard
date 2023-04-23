@@ -127,7 +127,7 @@
           <img style = "width: 325px; height: 158px;" class="card-img-top" src="/assets/img/bearpic.png" alt="Card image cap">
           <div class="card-body">
             <h4 class="card-title">Short</h4>
-            <p class="card-text" id="cardtext1"></p>
+            <p class="card-text" id="cardtexthtml1"></p>
             <a href="https://www.avanza.se/borshandlade-produkter/certifikat-torg/lista.html" class="btn btn-primary">Gå till certifikat</a>
           </div>
         </div>
@@ -135,7 +135,7 @@
           <img style = "width: 325px; height: 158px;" class="card-img-top" src="/assets/img/bearpic.png" alt="Card image cap">
           <div class="card-body">
             <h4 class="card-title">Short</h4>
-            <p class="card-text" id="cardtext2"></p>
+            <p class="card-text" id="cardtexthtml2"></p>
             <a href="https://www.avanza.se/borshandlade-produkter/certifikat-torg/lista.html" class="btn btn-primary">Gå till certifikat</a>
           </div>
         </div>
@@ -196,6 +196,7 @@ async function getData() {
   let str1 = day[0].concat('-', day[1]);
   let str2 = str1.concat('-', intday.toString());
   let cardtext1 = 'Short ' + arr[0] + ' kl 16:00 den ' + str2 + ' för ' + x * 20 + "% av avsatt kapital.";
+  document.getElementById('cardtexthtml1').innerHTML = cardtext1;
   document.getElementById('name1').innerHTML = arr[0];
   document.getElementById('land1').innerHTML = arr[1];
   document.getElementById('xdag1').innerHTML = arr[2];
@@ -205,10 +206,6 @@ async function getData() {
   document.getElementById('procent1').innerHTML = arr[6];
   document.getElementById('owner1').innerHTML = arr[7];
 
-  console.log(arr[8]);
-  console.log(arr[16]);
-
-
   if(arr[8]){
     let x2 = Math.ceil(arr[14] / 2);
     let day2 = arr[10].split('-');
@@ -216,6 +213,7 @@ async function getData() {
     let str12 = day2[0].concat('-', day2[1]);
     let str22 = str12.concat('-', intday2.toString());
     let cardtext2 = 'Short'  + arr[8] + ' kl 16:00 den ' + str22 + 'för ' + x2 * 20 + "% av avsatt kapital.";
+    document.getElementById('cardtexthtml2').innerHTML = cardtext2;
     document.getElementById('name2').innerHTML = arr[8];
     document.getElementById('land2').innerHTML = arr[9];
     document.getElementById('xdag2').innerHTML = arr[10];
@@ -232,7 +230,6 @@ async function getData() {
     let intday3 = parseInt(day3[2]) - 1;
     let str13 = day3[0].concat('-', day3[1]);
     let str23 = str13.concat('-', intday3.toString());
-    let cardtext2 = 'Short'  + arr[16] + ' kl 16:00 den ' + str23 + 'för ' + x3 * 20 + "% av avsatt kapital.";
     document.getElementById('name3').innerHTML = arr[16];
     document.getElementById('land3').innerHTML = arr[17];
     document.getElementById('xdag3').innerHTML = arr[18];
@@ -250,10 +247,8 @@ async function getData() {
   let wallettext = 'Start värdet av wallet: 10000' ;
   let walletpercent = (((walletData2 / 10000) * 100) - 100).toString();
 
-  document.getElementById('cardtext1').innerHTML = cardtext1;
-  document.getElementById('cardtext2').innerHTML = cardtext2;
   document.getElementById('wallettext').innerHTML = wallettext;
-  document.getElementById('wallettitle').innerHTML = walllettitle + ' (' + walletpercent +'%)';
+  document.getElementById('wallettitle').innerHTML = walllettitle + ' (+' + walletpercent +'%)';
 };
 </script>
 
