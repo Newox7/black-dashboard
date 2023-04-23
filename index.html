@@ -205,6 +205,10 @@ async function getData() {
   document.getElementById('procent1').innerHTML = arr[6];
   document.getElementById('owner1').innerHTML = arr[7];
 
+  console.log(arr[8]);
+  console.log(arr[16]);
+
+
   if(typeof arr[8] !== "undefined"){
     let x2 = Math.ceil(arr[14] / 2);
     let day2 = arr[10].split('-');
@@ -222,16 +226,34 @@ async function getData() {
     document.getElementById('owner2').innerHTML = arr[15];
   }
 
+  if(typeof arr[16] !== "undefined"){
+    let x3 = Math.ceil(arr[22] / 2);
+    let day3 = arr[18].split('-');
+    let intday3 = parseInt(day3[2]) - 1;
+    let str13 = day3[0].concat('-', day3[1]);
+    let str23 = str13.concat('-', intday3.toString());
+    let cardtext2 = 'Short'  + arr[16] + ' kl 16:00 den ' + str3 + 'för ' + x3 * 20 + "% av avsatt kapital.";
+    document.getElementById('name2').innerHTML = arr[16];
+    document.getElementById('land2').innerHTML = arr[17];
+    document.getElementById('xdag2').innerHTML = arr[18];
+    document.getElementById('utddag2').innerHTML = arr[19];
+    document.getElementById('utd2').innerHTML = arr[20];
+    document.getElementById('kurs2').innerHTML = arr[21];
+    document.getElementById('procent2').innerHTML = arr[22];
+    document.getElementById('owner2').innerHTML = arr[23];
+  }
+
   const response2 = await fetch('wallet.txt');
   const walletData = await response2.text();
   walletData2 = parseInt(walletData);
   let walllettitle = 'Wallet: ' + walletData2;
   let wallettext = 'Start värdet av wallet: 10000' ;
+  let walletpercent = (((walllettitle / 10000) * 100) - 100).toString();
 
   document.getElementById('cardtext1').innerHTML = cardtext1;
   document.getElementById('cardtext2').innerHTML = cardtext2;
   document.getElementById('wallettext').innerHTML = wallettext;
-  document.getElementById('wallettitle').innerHTML = walllettitle + '(' + ((walllettitle / 10000) * 100) - 100 +'%)';
+  document.getElementById('wallettitle').innerHTML = walllettitle + ' (' + walletpercent +'%)';
 };
 </script>
 
