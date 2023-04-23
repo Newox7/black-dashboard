@@ -206,7 +206,7 @@ async function getData() {
   document.getElementById('owner1').innerHTML = arr[7];
 
   if(typeof arr[8] !== "undefined"){
-    let x2 = Math.floor(arr[14] / 2);
+    let x2 = Math.ceil(arr[14] / 2);
     let day2 = arr[10].split('-');
     let intday2 = parseInt(day2[2]) - 1;
     let str12 = day2[0].concat('-', day2[1]);
