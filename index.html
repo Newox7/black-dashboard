@@ -209,7 +209,7 @@ async function getData() {
   console.log(arr[16]);
 
 
-  if(typeof arr[8] !== "undefined"){
+  if(arr[8]){
     let x2 = Math.ceil(arr[14] / 2);
     let day2 = arr[10].split('-');
     let intday2 = parseInt(day2[2]) - 1;
@@ -226,7 +226,7 @@ async function getData() {
     document.getElementById('owner2').innerHTML = arr[15];
   }
 
-  if(typeof arr[16] !== "undefined"){
+  if(arr[16]){
     let x3 = Math.ceil(arr[22] / 2);
     let day3 = arr[18].split('-');
     let intday3 = parseInt(day3[2]) - 1;
@@ -248,7 +248,7 @@ async function getData() {
   walletData2 = parseInt(walletData);
   let walllettitle = 'Wallet: ' + walletData2;
   let wallettext = 'Start värdet av wallet: 10000' ;
-  let walletpercent = (((walllettitle / 10000) * 100) - 100).toString();
+  let walletpercent = (((walletData2 / 10000) * 100) - 100).toString();
 
   document.getElementById('cardtext1').innerHTML = cardtext1;
   document.getElementById('cardtext2').innerHTML = cardtext2;
