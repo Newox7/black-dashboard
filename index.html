@@ -232,15 +232,15 @@ async function getData() {
     let intday3 = parseInt(day3[2]) - 1;
     let str13 = day3[0].concat('-', day3[1]);
     let str23 = str13.concat('-', intday3.toString());
-    let cardtext2 = 'Short'  + arr[16] + ' kl 16:00 den ' + str3 + 'för ' + x3 * 20 + "% av avsatt kapital.";
-    document.getElementById('name2').innerHTML = arr[16];
-    document.getElementById('land2').innerHTML = arr[17];
-    document.getElementById('xdag2').innerHTML = arr[18];
-    document.getElementById('utddag2').innerHTML = arr[19];
-    document.getElementById('utd2').innerHTML = arr[20];
-    document.getElementById('kurs2').innerHTML = arr[21];
-    document.getElementById('procent2').innerHTML = arr[22];
-    document.getElementById('owner2').innerHTML = arr[23];
+    let cardtext2 = 'Short'  + arr[16] + ' kl 16:00 den ' + str23 + 'för ' + x3 * 20 + "% av avsatt kapital.";
+    document.getElementById('name3').innerHTML = arr[16];
+    document.getElementById('land3').innerHTML = arr[17];
+    document.getElementById('xdag3').innerHTML = arr[18];
+    document.getElementById('utddag3').innerHTML = arr[19];
+    document.getElementById('utd3').innerHTML = arr[20];
+    document.getElementById('kurs3').innerHTML = arr[21];
+    document.getElementById('procent3').innerHTML = arr[22];
+    document.getElementById('owner3').innerHTML = arr[23];
   }
 
   const response2 = await fetch('wallet.txt');
