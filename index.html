@@ -190,19 +190,36 @@ async function getData() {
     });
   });
 
-  let x = Math.floor(arr[6] / 2);
+  let x = Math.roof(arr[6] / 2);
   let day = arr[2].split('-');
   let intday = parseInt(day[2]) - 1;
   let str1 = day[0].concat('-', day[1]);
   let str2 = str1.concat('-', intday.toString());
-  let cardtext1 = 'Rekomenderar köp av "Bear Cert x' + x + ' ' + arr[0] + ' kl 16:00 den ' + str2 + '.';
-  if(typeof arr[10] !== "undefined"){
+  let cardtext1 = 'Short ' + arr[0] + ' kl 16:00 den ' + str2 + ' för ' + x * 20 + "% av avsatt kapital.";
+  document.getElementById('name1').innerHTML = arr[0];
+  document.getElementById('land1').innerHTML = arr[1];
+  document.getElementById('xdag1').innerHTML = arr[2];
+  document.getElementById('utddag1').innerHTML = arr[3];
+  document.getElementById('utd1').innerHTML = arr[4];
+  document.getElementById('kurs1').innerHTML = arr[5];
+  document.getElementById('procent1').innerHTML = arr[6];
+  document.getElementById('owner1').innerHTML = arr[7];
+
+  if(typeof arr[8] !== "undefined"){
     let x2 = Math.floor(arr[14] / 2);
     let day2 = arr[10].split('-');
     let intday2 = parseInt(day2[2]) - 1;
     let str12 = day2[0].concat('-', day2[1]);
     let str22 = str12.concat('-', intday2.toString());
-    let cardtext2 = 'Rekomenderar köp av "Bear Cert x' + x2 + ' ' + arr[8] + ' kl 16:00 den ' + str22 + '.';
+    let cardtext2 = 'Short'  + arr[8] + ' kl 16:00 den ' + str22 + 'för ' + x2 * 20 + "% av avsatt kapital.";
+    document.getElementById('name2').innerHTML = arr[8];
+    document.getElementById('land2').innerHTML = arr[9];
+    document.getElementById('xdag2').innerHTML = arr[10];
+    document.getElementById('utddag2').innerHTML = arr[11];
+    document.getElementById('utd2').innerHTML = arr[12];
+    document.getElementById('kurs2').innerHTML = arr[13];
+    document.getElementById('procent2').innerHTML = arr[14];
+    document.getElementById('owner2').innerHTML = arr[15];
   }
 
   const response2 = await fetch('wallet.txt');
@@ -214,31 +231,7 @@ async function getData() {
   document.getElementById('cardtext1').innerHTML = cardtext1;
   document.getElementById('cardtext2').innerHTML = cardtext2;
   document.getElementById('wallettext').innerHTML = wallettext;
-  document.getElementById('wallettitle').innerHTML = walllettitle;
-  document.getElementById('name1').innerHTML = arr[0];
-  document.getElementById('land1').innerHTML = arr[1];
-  document.getElementById('xdag1').innerHTML = arr[2];
-  document.getElementById('utddag1').innerHTML = arr[3];
-  document.getElementById('utd1').innerHTML = arr[4];
-  document.getElementById('kurs1').innerHTML = arr[5];
-  document.getElementById('procent1').innerHTML = arr[6];
-  document.getElementById('owner1').innerHTML = arr[7];
-  document.getElementById('name2').innerHTML = arr[8];
-  document.getElementById('land2').innerHTML = arr[9];
-  document.getElementById('xdag2').innerHTML = arr[10];
-  document.getElementById('utddag2').innerHTML = arr[11];
-  document.getElementById('utd2').innerHTML = arr[12];
-  document.getElementById('kurs2').innerHTML = arr[13];
-  document.getElementById('procent2').innerHTML = arr[14];
-  document.getElementById('owner2').innerHTML = arr[15];
-  document.getElementById('name3').innerHTML = arr[16];
-  document.getElementById('land3').innerHTML = arr[17];
-  document.getElementById('xdag3').innerHTML = arr[18];
-  document.getElementById('utddag3').innerHTML = arr[19];
-  document.getElementById('utd3').innerHTML = arr[20];
-  document.getElementById('kurs3').innerHTML = arr[21];
-  document.getElementById('procent3').innerHTML = arr[22];
-  document.getElementById('owner3').innerHTML = arr[23];
+  document.getElementById('wallettitle').innerHTML = walllettitle + '(' + ((walllettitle / 10000) * 100) - 100 +'%)';
 };
 </script>
 
