@@ -245,7 +245,7 @@ async function getData() {
   walletData2 = parseInt(walletData);
   let walllettitle = 'Wallet: ' + walletData2;
   let wallettext = 'Start värdet av wallet: 10000' ;
-  let walletpercent = (((walletData2 / 10000) * 100) - 100).toString();
+  let walletpercent = (((walletData2 / 10000) * 100) - 100).toFixed(2).toString();
 
   document.getElementById('wallettext').innerHTML = wallettext;
   document.getElementById('wallettitle').innerHTML = walllettitle + ' (+' + walletpercent +'%)';
